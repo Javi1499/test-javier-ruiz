@@ -1,0 +1,13 @@
+@import "../sassStyles/variables";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $background;
+}
+
+#root {
+  height: 100%;
+}
