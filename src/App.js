@@ -1,9 +1,9 @@
-import { ImageCard } from "components";
+import { Gallery, ImageCard } from "components";
 
 function App() {
   return (
     <div className="App">
-      <ImageCard />
+      <Gallery />
     </div>
   );
 }
