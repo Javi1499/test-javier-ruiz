@@ -2,8 +2,10 @@ import React from "react";
 import "./style.scss";
 import Image from "components/Image";
 import { data } from "api/cities-json";
-const ImageCard = () => {
-  const { title, description, source, liked } = data[0];
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+const ImageCard = (props) => {
+  const { title, description, source } = props;
   return (
     <div className="card">
       <div className="card__container--image">
@@ -11,8 +13,7 @@ const ImageCard = () => {
       </div>
       <div className="card__container--info">
         <p className="card__text">{title}</p>
-        <i class="fa-light fa-heart card__icon"></i>
-        {/* <i class="fa-solid fa-heart"></i> */}
+        <FontAwesomeIcon className="card__icon" icon={faHeart} />
       </div>
     </div>
   );
