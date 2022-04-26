@@ -2,7 +2,9 @@ import React from "react";
 import "./style.scss";
 const Button = ({ children, submitButton }) => {
   return (
-    <input className="button" value={children} onClick={() => submitButton()} />
+    <button className="button" onClick={() => submitButton()}>
+      {children}
+    </button>
   );
 };
 

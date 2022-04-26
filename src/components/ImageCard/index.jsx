@@ -1,7 +1,6 @@
 import React from "react";
 import "./style.scss";
 import Image from "components/Image";
-import { data } from "api/cities-json";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 const ImageCard = (props) => {
