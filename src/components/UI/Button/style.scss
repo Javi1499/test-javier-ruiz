@@ -1,0 +1,13 @@
+@import "/src/sass/mixins";
+@import "/src/sass/variables";
+.button {
+  @include buttonStyle(white, 1px solid $blue);
+  padding: 15px;
+  color: $blue;
+  transition: 0.5s;
+  &:hover {
+    color: white;
+    padding: 15px;
+    @include buttonStyle($blue, 1px solid $blue);
+  }
+}

@@ -1,0 +1,12 @@
+@import "/src/sass/variables";
+
+@mixin buttonStyle($fill, $border) {
+  border: $border;
+  background-color: $fill;
+  border-radius: 7px;
+  padding: 16px;
+  text-align: center;
+  font-size: $primarySize;
+  box-shadow: 2px 4px 6px -4px #474747;
+  cursor: pointer;
+}
