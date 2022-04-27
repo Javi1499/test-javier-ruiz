@@ -11,7 +11,6 @@ export const getImagesAction = () => {
     dispatch(getImages());
     try {
       const res = await axiosClient.get("/images");
-      console.log(res.data);
       dispatch(getImagesSuccess(res.data));
     } catch (error) {
       console.error(error);
