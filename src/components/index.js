@@ -3,5 +3,5 @@ import Image from "./Image";
 import Gallery from "./Gallery";
 import Button from "./UI/Button";
 import ImageModal from "./ImageModal";
-
-export { ImageCard, Image, Gallery, Button, ImageModal };
+import TitleHeader from "./UI/Button/TitleHeader";
+export { ImageCard, Image, Gallery, Button, ImageModal, TitleHeader };

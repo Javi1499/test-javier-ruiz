@@ -1,0 +1,7 @@
+@import "/src/sass/mixins";
+.title {
+  @include textStyle;
+  display: block;
+  text-align: center;
+  font-size: 90px;
+}
