@@ -10,3 +10,10 @@
   box-shadow: 2px 4px 6px -4px #474747;
   cursor: pointer;
 }
+
+@mixin textStyle {
+  color: $text-color;
+  margin: 0;
+  font-family: Arial, Helvetica;
+  font-size: $primarySize;
+}

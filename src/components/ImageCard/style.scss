@@ -1,5 +1,6 @@
 @import "/src/sass/variables";
 @import "/src/sass/animations";
+@import "/src/sass/mixins";
 .card {
   display: flex;
   flex-wrap: wrap;
@@ -36,14 +37,13 @@
   &__icon {
     font-size: 20px;
     cursor: pointer;
-    color: $unlike;
+    color: $color-icon;
     &--liked {
       color: $blue;
     }
   }
 
   &__text {
-    font-size: $primarySize;
-    margin: 0;
+    @include textStyle;
   }
 }
