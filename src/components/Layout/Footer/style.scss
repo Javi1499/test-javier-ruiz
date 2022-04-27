@@ -1,0 +1,32 @@
+@import "/src/sass/variables";
+@import "/src/sass/mixins";
+
+.footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 100%;
+  width: 100%;
+  height: 80px;
+  padding: 16px;
+  background-color: $footer-background;
+
+  @media (max-width: $desktop) {
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+    height: fit-content;
+  }
+
+  &__section {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__text {
+    text-align: center;
+    @include textStyle;
+    color: white;
+  }
+}
