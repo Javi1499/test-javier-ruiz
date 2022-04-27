@@ -5,7 +5,7 @@
   padding: 15px;
   color: $blue;
   transition: 0.5s;
-  &:hover {
+  &--active {
     color: white;
     padding: 15px;
     @include buttonStyle($blue, 1px solid $blue);

@@ -56,7 +56,10 @@ const GalleryView = () => {
         />
       )}
       <TitleHeader>Our gallery</TitleHeader>
-      <Button submitButton={() => setFilterImage((prev) => !prev)}>
+      <Button
+        submitButton={() => setFilterImage((prev) => !prev)}
+        isActive={filterImage}
+      >
         Photos your liked
       </Button>
 
