@@ -27,7 +27,7 @@ const GalleryView = () => {
 
   useEffect(() => {
     resetTimeout();
-    timeoutRef.current = setTimeout(() => addNewImage(), 1000);
+    timeoutRef.current = setTimeout(() => addNewImage(), 3000);
     return () => {
       clearTimeout(timeoutRef.current);
     };
