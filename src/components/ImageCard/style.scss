@@ -34,9 +34,12 @@
   }
 
   &__icon {
-    color: $blue;
     font-size: 20px;
     cursor: pointer;
+    color: $unlike;
+    &--liked {
+      color: $blue;
+    }
   }
 
   &__text {

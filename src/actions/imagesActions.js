@@ -1,5 +1,5 @@
 import axiosClient from "config/server";
-import { GET_IMAGES, GET_IMAGES_SUCCESS } from "types";
+import { GET_IMAGES, GET_IMAGES_SUCCESS, LIKE_PHOTO } from "types";
 
 export const getImagesAction = () => {
   return async (dispatch) => {
@@ -19,3 +19,14 @@ const getImagesSuccess = (images) => ({
   type: GET_IMAGES_SUCCESS,
   payload: images,
 });
+
+export const likeAction = (id) => {
+  return async (dispatch) => {
+    try {
+      console.log(id);
+      dispatch(likeFunction(id));
+    } catch (error) {}
+  };
+};
+
+const likeFunction = (id) => ({ type: LIKE_PHOTO, payload: id });

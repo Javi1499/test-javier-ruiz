@@ -3,8 +3,8 @@ import "./style.scss";
 import Image from "components/Image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
-const ImageCard = (props) => {
-  const { title, description, source } = props;
+const ImageCard = ({ imageData, onLiked }) => {
+  const { title, description, source, liked, id } = imageData;
   return (
     <div className="card">
       <div className="card__container--image">
@@ -12,7 +12,11 @@ const ImageCard = (props) => {
       </div>
       <div className="card__container--info">
         <p className="card__text">{title}</p>
-        <FontAwesomeIcon className="card__icon" icon={faHeart} />
+        <FontAwesomeIcon
+          onClick={() => onLiked(id)}
+          className={`card__icon ${liked ? "card__icon--liked" : ""}`}
+          icon={faHeart}
+        />
       </div>
     </div>
   );
