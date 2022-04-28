@@ -6,6 +6,11 @@
   width: 80%;
   height: 50px;
   justify-content: flex-end;
+
+  @media (max-width: $desktop) {
+    width: 100%;
+    justify-content: center;
+  }
   .button {
     @include buttonStyle(white, 1px solid $blue);
     padding: 15px;
