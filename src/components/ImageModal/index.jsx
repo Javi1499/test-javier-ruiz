@@ -4,11 +4,11 @@ import "./style.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faXmark } from "@fortawesome/free-solid-svg-icons";
 
-const ImageModal = ({ imageData, onLiked, setIsModalOpen }) => {
+const ImageModal = ({ imageData, onLiked, setIsModalOpen, isModalOpen }) => {
   const { title, description, source, liked, id } = imageData;
 
   return (
-    <div className="wrapper">
+    <div className={`wrapper wrapper${isModalOpen ? "--open" : "--close"}`}>
       <div className="modal">
         <FontAwesomeIcon
           onClick={() => setIsModalOpen(false)}
@@ -23,7 +23,7 @@ const ImageModal = ({ imageData, onLiked, setIsModalOpen }) => {
           <p className="modal__text">{description}</p>
         </div>
         <FontAwesomeIcon
-          onClick={() => onLiked(id)}
+          onClick={() => onLiked(imageData)}
           className={`modal__icon ${liked ? "modal__icon--liked" : ""}`}
           icon={faHeart}
         />

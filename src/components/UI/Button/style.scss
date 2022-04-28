@@ -1,13 +1,25 @@
 @import "/src/sass/mixins";
 @import "/src/sass/variables";
-.button {
-  @include buttonStyle(white, 1px solid $blue);
-  padding: 15px;
-  color: $blue;
-  transition: 0.5s;
-  &:hover {
-    color: white;
+
+.container__button {
+  display: flex;
+  width: 80%;
+  height: 50px;
+  justify-content: flex-end;
+
+  @media (max-width: $desktop) {
+    width: 100%;
+    justify-content: center;
+  }
+  .button {
+    @include buttonStyle(white, 1px solid $blue);
     padding: 15px;
-    @include buttonStyle($blue, 1px solid $blue);
+    color: $blue;
+    transition: 0.5s;
+    &--active {
+      color: white;
+      padding: 15px;
+      @include buttonStyle($blue, 1px solid $blue);
+    }
   }
 }

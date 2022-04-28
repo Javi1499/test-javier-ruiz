@@ -1,28 +1,45 @@
 @import "/src/sass/variables";
 @import "/src/sass/mixins";
+@import "/src/sass/animations";
 
 .wrapper {
   display: flex;
   width: 100%;
   height: 100%;
   justify-content: center;
-  position: absolute;
+  position: fixed;
   overflow-y: scroll;
   background-color: $blur;
-  z-index: 1;
+  z-index: 2;
+
+  &--close {
+    z-index: -1;
+    opacity: 0;
+    animation: hideModal 0.25s;
+    transform: scale(0);
+  }
+
+  &--open {
+    z-index: 2;
+    opacity: 1;
+    animation: showModal 0.25s;
+    transform: scale(1);
+  }
 }
 
 .modal {
   display: flex;
   flex-wrap: wrap;
-  margin: 20px auto;
+  margin: auto;
   width: 45%;
   height: fit-content;
   justify-content: space-between;
   padding: 45px;
-  position: relative;
   border-radius: 25px;
+  position: relative;
+  transition: 2s height ease-in-out;
   background-color: $card-background;
+
   &__icon {
     cursor: pointer;
     font-size: 25px;
@@ -42,6 +59,11 @@
   &__image {
     width: 100%;
     margin-bottom: 16px;
+  }
+
+  @media (max-width: $desktop) {
+    width: 100%;
+    margin: 20px;
   }
 
   &__info {

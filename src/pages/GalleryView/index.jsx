@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState, useRef } from "react";
-import { Gallery, Button, ImageModal } from "components";
+import { Gallery, Button, ImageModal, TitleHeader } from "components";
 import { useSelector, useDispatch } from "react-redux";
 import {
   getImagesAction,
@@ -10,6 +10,7 @@ const GalleryView = () => {
   const { imagesData, imageSelected } = useSelector((state) => state.images);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [imagesToShow, setimagesToShow] = useState(1);
+  const [filterImage, setFilterImage] = useState(false);
   const dispatch = useDispatch();
   const timeoutRef = useRef(null);
 
@@ -26,7 +27,7 @@ const GalleryView = () => {
 
   useEffect(() => {
     resetTimeout();
-    timeoutRef.current = setTimeout(() => addNewImage(), 120000);
+    timeoutRef.current = setTimeout(() => addNewImage(), 3000);
     return () => {
       clearTimeout(timeoutRef.current);
     };
@@ -46,7 +47,6 @@ const GalleryView = () => {
   }, []);
   return (
     <Fragment>
-      {/* <Button>Photos your liked</Button> */}
       {isModalOpen && (
         <ImageModal
           imageData={imagesData[imageSelected]}
@@ -55,8 +55,22 @@ const GalleryView = () => {
           setIsModalOpen={setIsModalOpen}
         />
       )}
+      <TitleHeader>Our gallery</TitleHeader>
+      <Button
+        submitButton={() => setFilterImage((prev) => !prev)}
+        isActive={filterImage}
+      >
+        Photos your liked
+      </Button>
+
       <Gallery
-        imagesData={imagesData.slice(0, imagesToShow)}
+        imagesData={
+          filterImage
+            ? imagesData
+                .slice(0, imagesToShow)
+                .filter((image) => image.liked === true)
+            : imagesData.slice(0, imagesToShow)
+        }
         openImage={openImage}
         onLiked={onLiked}
       />

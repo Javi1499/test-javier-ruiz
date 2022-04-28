@@ -24,11 +24,15 @@ const getImagesSuccess = (images) => ({
   payload: images,
 });
 
-export const likeAction = (id) => {
+export const likeAction = (image) => {
   return async (dispatch) => {
+    const updateImage = {
+      ...image,
+      liked: !image.liked,
+    };
     try {
-      console.log(id);
-      dispatch(likeFunction(id));
+      await axiosClient.put(`/images/${image.id}`, updateImage);
+      dispatch(likeFunction(image.id));
     } catch (error) {}
   };
 };
