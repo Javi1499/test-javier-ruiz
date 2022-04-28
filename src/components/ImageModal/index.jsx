@@ -23,7 +23,7 @@ const ImageModal = ({ imageData, onLiked, setIsModalOpen, isModalOpen }) => {
           <p className="modal__text">{description}</p>
         </div>
         <FontAwesomeIcon
-          onClick={() => onLiked(id)}
+          onClick={() => onLiked(imageData)}
           className={`modal__icon ${liked ? "modal__icon--liked" : ""}`}
           icon={faHeart}
         />

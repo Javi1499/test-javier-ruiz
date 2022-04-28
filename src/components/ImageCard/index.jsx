@@ -15,7 +15,7 @@ const ImageCard = ({ imageData, onLiked, onClick }) => {
           {title}
         </p>
         <FontAwesomeIcon
-          onClick={() => onLiked(id)}
+          onClick={() => onLiked(imageData)}
           className={`card__icon ${liked ? "card__icon--liked" : ""}`}
           icon={faHeart}
         />
