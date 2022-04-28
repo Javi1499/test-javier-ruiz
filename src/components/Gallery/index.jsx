@@ -12,7 +12,7 @@ const Gallery = ({ imagesData, openImage, onLiked }) => {
     />
   ));
   return (
-    <div className="container">
+    <div className="container__gallery">
       <div className="gallery">{imagesToShow}</div>
     </div>
   );

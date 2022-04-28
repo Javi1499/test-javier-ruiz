@@ -2,12 +2,14 @@ import React from "react";
 import "./style.scss";
 const Button = ({ children, submitButton, isActive }) => {
   return (
-    <button
-      className={`button${isActive ? "--active" : ""}`}
-      onClick={() => submitButton()}
-    >
-      {children}
-    </button>
+    <div className="container__button">
+      <button
+        className={`button${isActive ? "--active" : ""}`}
+        onClick={() => submitButton()}
+      >
+        {children}
+      </button>
+    </div>
   );
 };
 

@@ -1,8 +1,9 @@
-.container {
+.container__gallery {
   display: flex;
   width: 100%;
   justify-content: center;
   height: fit-content;
+  min-height: 100vh;
 }
 .gallery {
   display: grid;
