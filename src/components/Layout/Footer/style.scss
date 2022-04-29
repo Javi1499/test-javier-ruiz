@@ -10,7 +10,7 @@
   padding: 16px;
   background-color: $footer-background;
 
-  @media (max-width: $desktop) {
+  @media (max-width: $tablet) {
     grid-template-columns: 100%;
     grid-template-rows: repeat(3, 1fr);
     gap: 20px;
