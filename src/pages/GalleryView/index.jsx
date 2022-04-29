@@ -11,8 +11,10 @@ const GalleryView = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [imagesToShow, setimagesToShow] = useState(1);
   const [filterImage, setFilterImage] = useState(false);
+
   const dispatch = useDispatch();
   const timeoutRef = useRef(null);
+  const delay = 120000;
 
   const resetTimeout = () => {
     if (timeoutRef.current) {
@@ -21,16 +23,17 @@ const GalleryView = () => {
   };
 
   const addNewImage = () => {
-    if (imagesToShow === imagesData.length) return;
     setimagesToShow((prev) => prev + 1);
   };
 
   useEffect(() => {
-    resetTimeout();
-    timeoutRef.current = setTimeout(() => addNewImage(), 3000);
-    return () => {
-      clearTimeout(timeoutRef.current);
-    };
+    if (imagesToShow < imagesData.length) {
+      resetTimeout();
+      timeoutRef.current = setTimeout(() => addNewImage(), delay);
+      return () => {
+        clearTimeout(timeoutRef.current);
+      };
+    }
   }, [imagesToShow, addNewImage]);
 
   const onLiked = (id) => {
