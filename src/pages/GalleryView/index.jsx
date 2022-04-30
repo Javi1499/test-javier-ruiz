@@ -5,7 +5,7 @@ import {
   getImagesAction,
   likeAction,
   selectImage,
-} from "actions/imagesActions";
+} from "state/actions/imagesActions";
 
 const GalleryView = () => {
   const { imagesData, imageSelected } = useSelector((state) => state.images);
