@@ -17,6 +17,7 @@ const Footer = () => {
           target="_blank"
           href="https://github.com/Javi1499/test-javier-ruiz"
           className="footer__text"
+          rel="noreferrer"
         >
           App Repository
         </a>

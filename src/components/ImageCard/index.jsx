@@ -4,7 +4,7 @@ import Image from "components/Image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 const ImageCard = ({ imageData, onLiked, onClick }) => {
-  const { title, description, source, liked, id } = imageData;
+  const { title, description, source, liked } = imageData;
   return (
     <div className="card">
       <div className="card__container--image" onClick={onClick}>
