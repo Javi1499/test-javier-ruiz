@@ -5,7 +5,8 @@ import {
   getImagesAction,
   likeAction,
   selectImage,
-} from "actions/imagesActions";
+} from "state/actions/imagesActions";
+
 const GalleryView = () => {
   const { imagesData, imageSelected } = useSelector((state) => state.images);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -22,11 +23,10 @@ const GalleryView = () => {
     }
   };
 
-  const addNewImage = () => {
-    setimagesToShow((prev) => prev + 1);
-  };
-
   useEffect(() => {
+    const addNewImage = () => {
+      setimagesToShow((prev) => prev + 1);
+    };
     if (imagesToShow < imagesData.length) {
       resetTimeout();
       timeoutRef.current = setTimeout(() => addNewImage(), delay);
@@ -34,7 +34,7 @@ const GalleryView = () => {
         clearTimeout(timeoutRef.current);
       };
     }
-  }, [imagesToShow, addNewImage]);
+  }, [imagesToShow, imagesData.length]);
 
   const onLiked = (id) => {
     dispatch(likeAction(id));
@@ -44,10 +44,11 @@ const GalleryView = () => {
     dispatch(selectImage(image));
     setIsModalOpen(true);
   };
+
   useEffect(() => {
     const getImages = () => dispatch(getImagesAction());
     getImages();
-  }, []);
+  }, [dispatch]);
   return (
     <Fragment>
       {isModalOpen && (
